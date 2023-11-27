@@ -64,7 +64,7 @@ function App() {
       url: 'https://onecompiler-apis.p.rapidapi.com/api/v1/run',
       headers: {
         'content-type': 'application/json',
-        'X-RapidAPI-Key': '856a334aa5mshd1a198ec96e31c0p132bf9jsn9a9c66ad13a5',
+        'X-RapidAPI-Key': 'b8c82e04f9mshe3b6c2a05c17536p105a8djsn8f140a1496c3',
         'X-RapidAPI-Host': 'onecompiler-apis.p.rapidapi.com'
       },
       data: {
