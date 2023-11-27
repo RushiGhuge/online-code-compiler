@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/online-code-comliler/static/css/main.6135df09.css",
+    "main.js": "/online-code-comliler/static/js/main.85da05d0.js",
+    "static/js/496.6de7aee1.chunk.js": "/online-code-comliler/static/js/496.6de7aee1.chunk.js",
+    "static/media/logo.svg": "/online-code-comliler/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/online-code-comliler/index.html",
+    "main.6135df09.css.map": "/online-code-comliler/static/css/main.6135df09.css.map",
+    "main.85da05d0.js.map": "/online-code-comliler/static/js/main.85da05d0.js.map",
+    "496.6de7aee1.chunk.js.map": "/online-code-comliler/static/js/496.6de7aee1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6135df09.css",
+    "static/js/main.85da05d0.js"
+  ]
+}
