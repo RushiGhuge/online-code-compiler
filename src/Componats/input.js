@@ -14,7 +14,7 @@ const Input = ({ props }) => {
 
     useEffect(() => {
         if (props.lang === 'java,main.java') {
-            setValue(`public class main {
+            setValue(`public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
     }   
@@ -52,7 +52,12 @@ int main() {
     function handelRun() {
         i++;
         console.log('code setted!!!');
-        props.setCode(value + `//${i}`)
+        if (props.lang === 'python,main.py') {
+            props.setCode(value + `#${i}`)
+        }
+        else {
+            props.setCode(value + `/*${i}*/`)
+        }
         // props.run();
     }
 
