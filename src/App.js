@@ -105,6 +105,20 @@ function App() {
     setRightPanelWidth(rightPanel)
   }
 
+  function handleTouchMove(e) {
+    // const leftPanel = document.getElementById('leftPanel');
+    const centerBar = document.getElementById('centerBar');
+    // const rightPanel = document.getElementById('righPanel');
+
+    // // base case
+    const newX = e.touches[0].clientX;
+    const leftPanelWidth = newX;
+    const rightPanel = window.innerWidth - newX - centerBar.offsetWidth;;
+
+    setLeftPanelWidth(`${leftPanelWidth}px`)
+    setRightPanelWidth(rightPanel)
+  }
+
   // this function is for adjust the width of panels 
 
   function startResize(e) {
@@ -117,6 +131,26 @@ function App() {
     document.removeEventListener('mousemove', handleMouseMove);
     document.removeEventListener('mouseup', stopResize);
   }
+
+  function startResizeTouch(e) {
+    if (e.cancelable) {
+      e.preventDefault();
+      document.addEventListener('touchmove', handleTouchMove);
+      document.addEventListener('touchend', stopResizeTouch);
+    }
+  }
+
+  function stopResizeTouch(e) {
+    if (e.cancelable) {
+      e.preventDefault();
+      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchend', stopResizeTouch);
+    }
+  }
+
+  useEffect(() => {
+    document.getElementById('centerBar').addEventListener('touchmove', startResizeTouch)
+  })
 
   return (
     <ThemeProvider theme={darkTheme}>

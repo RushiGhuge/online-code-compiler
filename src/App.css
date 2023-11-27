@@ -123,6 +123,7 @@
 
 #centerBar>* {
   /* width: 5px; */
+  touch-action: none;
 }
 
 
