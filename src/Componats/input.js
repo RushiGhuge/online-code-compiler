@@ -52,10 +52,8 @@ int main() {
     function handelRun() {
         i++;
         console.log('code setted!!!');
-        props.setCode(value + `${i}`)
-
+        props.setCode(value + `//${i}`)
         // props.run();
-        
     }
 
     return <div id='leftPanel' className='textEditor' style={{ width: props.leftPanelWidth }}>

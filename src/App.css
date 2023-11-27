@@ -104,8 +104,9 @@
 }
 
 #centerBar {
-  width: 10px;
+  width: 7px;
   background: #8d8d8da3;
+  background: transparent;
   height: 100%;
   cursor: ew-resize;
   display: flex;
@@ -114,7 +115,7 @@
   transition: 0.1s;
 
   &:hover {
-    background: #8d8d8d;
+    background: #8d8d8dba;
     transition: 0.1s;
 
   }

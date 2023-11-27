@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../logo.svg'
 const Output = ({ props }) => {
 
-    const {codeInput,setCodeInput} = props;
+    const { codeInput, setCodeInput } = props;
     // const [textCodeInput, setTextCodeInput] = useState('');
     // useEffect(()=>{
     //     setCodeInput(textCodeInput);
@@ -23,7 +23,11 @@ const Output = ({ props }) => {
     // console.log(isRightShow);
     return (
         <div id='rightPanel' className='output' style={{ width: `${props.rightPanelWidth}px`, display: `${isRightShow}` }} >
-            <p className='outputHeading'>Your Output <button onClick={() => props.setOutput('')}>Clear</button></p>
+            <p className='outputHeading'>Your Output <button onClick={() => {
+                props.setOutput('')
+                setCodeInput('')
+            }
+            }>Clear</button></p>
             {/* text area for set the input and get output as well */}
             <textarea name="" id="" placeholder='Add Input If Needed!' value={codeInput} onChange={(e) => setCodeInput(e.target.value)}></textarea>
 
