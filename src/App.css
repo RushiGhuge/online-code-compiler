@@ -104,8 +104,8 @@
 }
 
 #centerBar {
-  width: 7px;
-  background: #8d8d8da3;
+  width: 15spx;
+  background: #8d8d8d89;
   background: transparent;
   height: 100%;
   cursor: ew-resize;
@@ -113,6 +113,7 @@
   justify-content: center;
   align-items: center;
   transition: 0.1s;
+  touch-action: none;
 
   &:hover {
     background: #8d8d8dba;
@@ -123,7 +124,6 @@
 
 #centerBar>* {
   /* width: 5px; */
-  touch-action: none;
 }
 
 
