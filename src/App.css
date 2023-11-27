@@ -96,7 +96,12 @@
   width: 100px;
 }
 
-#rightPanel {}
+#rightPanel > textarea {
+  width: 100%;
+  border: none;
+  margin-top: 10px;
+  padding: 5px;
+}
 
 #centerBar {
   width: 10px;

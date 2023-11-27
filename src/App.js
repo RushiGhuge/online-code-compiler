@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Input from './Componats/input';
@@ -23,6 +22,7 @@ function App() {
   const [code, setCode] = useState('');
   const [lang, setLang] = useState('javascript,index.js');
   const [output, setOutput] = useState('');
+  const [codeInput, setCodeInput] = useState('');
   const [fontsize, setFontSize] = useState(14);
   const [theme, setTheme] = useState('monokai')
   const [mainTheme, setMainTheme] = useState('dark');
@@ -31,7 +31,7 @@ function App() {
   const [rightPanelWidth, setRightPanelWidth] = useState(600)
   // const [hideRightPanel, setHideRightPanel] = useState(false);
 
-  console.log(rightPanelWidth);
+  // console.log(rightPanelWidth);
 
 
   const darkTheme = createTheme({
@@ -41,6 +41,7 @@ function App() {
   });
 
   useEffect(() => {
+    // when code is update...
     run()
   }, [code])
 
@@ -52,12 +53,11 @@ function App() {
     setTheme(e.target.value)
   }
 
-
   async function run() {
-
+    console.log('Code');
     setOutput('')
     let language = lang.split(',');
-    console.log(language);
+    // console.log(output);
     // import axios from 'axios';
     const options = {
       method: 'POST',
@@ -69,7 +69,7 @@ function App() {
       },
       data: {
         language: `${language[0]}`,
-        stdin: 'Peter',
+        stdin: `${codeInput}`,
         files: [
           {
             name: `${language[1]}`,
@@ -92,7 +92,7 @@ function App() {
   }
 
   function handleMouseMove(e) {
-    const leftPanel = document.getElementById('leftPanel');
+    // const leftPanel = document.getElementById('leftPanel');
     const centerBar = document.getElementById('centerBar');
     // const rightPanel = document.getElementById('righPanel');
 
@@ -190,7 +190,7 @@ function App() {
 
           <div id='centerBar' onMouseDown={startResize} ><IoEllipsisVertical /></div>
 
-          <Output props={{ output, setOutput, loder, rightPanelWidth }} />
+          <Output props={{ output, setOutput, loder, rightPanelWidth, setCodeInput, codeInput }} />
         </div>
       </div>
     </ThemeProvider>
